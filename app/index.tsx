@@ -1,34 +1,36 @@
 import { View, Text, StyleSheet, TextInput, Touchable, TouchableOpacity } from 'react-native'
 import {SafeAreaView} from 'react-native-safe-area-context';
 import React, { useState } from 'react'
+import HomePage from './screens';
 
 const index = () => {
 
     const [email, onChangeEmail] = useState(String)
 
     return (
-        <SafeAreaView style={styles.container}>
-            <Text style={styles.title}>Create an account</Text>
-            <Text>Enter email</Text>
-            <TextInput
-                style={styles.input}
-                onChangeText={onChangeEmail}
-                value={email}
-                placeholder="Email"
-            />
-            <TouchableOpacity onPress={() => {console.log('button pressed!')}}>
-                <View style={styles.button}>
-                    <Text style={{color: "#FFF"}}>
-                        Continue
-                    </Text>
-                </View>
-            </TouchableOpacity>
-            <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 5 }}>
-                <View style={{height: 1, width: 175, backgroundColor: '#D9D9D9'}} />
-                <Text>or</Text>
-                <View style={{height: 1, width: 175, backgroundColor: '#D9D9D9'}} />
-            </View>
-        </SafeAreaView>
+        // <SafeAreaView style={styles.container}>
+        //     <Text style={styles.title}>Create an account</Text>
+        //     <Text>Enter email</Text>
+        //     <TextInput
+        //         style={styles.input}
+        //         onChangeText={onChangeEmail}
+        //         value={email}
+        //         placeholder="Email"
+        //     />
+        //     <TouchableOpacity onPress={() => {console.log('button pressed!')}}>
+        //         <View style={styles.button}>
+        //             <Text style={{color: "#FFF"}}>
+        //                 Continue
+        //             </Text>
+        //         </View>
+        //     </TouchableOpacity>
+        //     <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 5 }}>
+        //         <View style={{height: 1, width: 175, backgroundColor: '#D9D9D9'}} />
+        //         <Text>or</Text>
+        //         <View style={{height: 1, width: 175, backgroundColor: '#D9D9D9'}} />
+        //     </View>
+        // </SafeAreaView>
+        < HomePage/>
     )
 }
 
