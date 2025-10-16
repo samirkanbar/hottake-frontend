@@ -1,9 +1,10 @@
+
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import React from 'react';
 import { useFonts, Fraunces_700Bold, Fraunces_400Regular } from '@expo-google-fonts/fraunces';
 
-const createpost = () => {
+const CreatePost = () => {
   const [fontsLoaded] = useFonts({
     Fraunces_700Bold,
     Fraunces_400Regular
@@ -19,46 +20,53 @@ const createpost = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View>
+        <View>
+          <View style={{alignItems: 'center'}}>
+            <Text style={styles.title}>Create a Statement</Text>
+          </View>
 
-        <Text style={styles.title}>Create a Post</Text>
+          <Text style={styles.subtitle}>Title Your Take:</Text>
+          <TextInput
+            style={styles.input_small}
+            onChangeText={onChangeTitle}
+            value={Title}
+            placeholder="Title"
+          />
 
-        <Text style={styles.subtitle}>Title Your Take:</Text>
-        <TextInput
-          style={styles.input_small}
-          onChangeText={onChangeTitle}
-          value={Title}
-          placeholder="Title"
-        />
+          <Text style={styles.subtitle}>Content:</Text>
+          <TextInput
+            style={styles.input_large}
+            onChangeText={onChangeContent}
+            value={content}
+            placeholder="What's your take?"
+            multiline={true}
+            textAlignVertical='top'
+          />
 
-        <Text style={styles.subtitle}>Content:</Text>
-        <TextInput
-          style={styles.input_large}
-          onChangeText={onChangeContent}
-          value={content}
-          placeholder="What's your take?"
-          multiline={true}
-          textAlignVertical='top'
-        />
-
-        <Text style={styles.subtitle}>Tags (optional):</Text>
-        <TextInput
-          style={styles.input_small}
-          onChangeText={onChangeTags}
-          value={tags}
-          placeholder="Add tags"
-        />
-
-        <TouchableOpacity onPress={() => {console.log('button pressed!')}}>
-            <View style={styles.button}>
-              <Text style={{color: "#FFF"}}>
-                Post
-              </Text>
-            </View>
-        </TouchableOpacity>
+          <Text style={styles.subtitle}>Tags (optional):</Text>
+          <TextInput
+            style={styles.input_small}
+            onChangeText={onChangeTags}
+            value={tags}
+            placeholder="Add tags"
+          />
+        </View>
+        <View style={{flex: 1, justifyContent: 'flex-end', alignItems: 'center'}}>
+          <TouchableOpacity onPress={() => {console.log('button pressed!')}}>
+              <View style={styles.button}>
+                <Text style={{color: "#FFF"}}>
+                  Post
+                </Text>
+              </View>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );
 };
+
+export default CreatePost;
+
 const styles = StyleSheet.create({
   container: {
     flex: 20,
@@ -90,6 +98,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   button: {
+    marginTop: 20,
     backgroundColor: "#000",
     borderRadius: 20,
     height: 50,
@@ -98,6 +107,3 @@ const styles = StyleSheet.create({
     alignItems:'center',
   },
 });
-
-
-export default createpost;
