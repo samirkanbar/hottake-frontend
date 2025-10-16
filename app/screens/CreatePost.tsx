@@ -2,13 +2,48 @@ import { View, Text, StyleSheet, TextInput, Touchable, TouchableOpacity } from '
 import {SafeAreaView} from 'react-native-safe-area-context';
 import React, { useState } from 'react'
 
-const index = () => {
+const CreatePost = () => {
 
-    const [title, onChangeTitle] = useState(String)
-    const [content, onChangeContent] = useState(String)
-    const [tags, onChangeTags] = useState(String)
+  const [title, onChangeTitle] = useState(String)
+  const [content, onChangeContent] = useState(String)
+  const [tags, onChangeTags] = useState(String)
     
-    const styles = StyleSheet.create({
+    return (
+      <SafeAreaView style={styles.container}>
+          <Text>Title</Text>
+          <TextInput
+              style = {styles.input}
+              onChangeText = {onChangeTitle}
+              value = {title}
+              placeholder = ""
+          />
+          <Text>Content</Text>
+          <TextInput
+              style = {styles.input}
+              onChangeText = {onChangeContent}
+              value = {content}
+              placeholder = ""
+          />
+          <Text>Tags(optional)</Text>
+          <TextInput
+              style = {styles.input}
+              onChangeText = {onChangeTags}
+              value = {tags}
+              placeholder = ""
+          />
+          <TouchableOpacity>
+              <View style={styles.button}>
+                  <Text>Post</Text>
+              </View>
+          </TouchableOpacity>
+
+      </SafeAreaView>
+    )
+}
+
+export default CreatePost;
+
+const styles = StyleSheet.create({
         container: {
             justifyContent: 'center', 
             alignItems: 'center', 
@@ -34,39 +69,3 @@ const index = () => {
             alignItems:'center'
         }
     });
-    
-    
-    return (
-        <SafeAreaView style={styles.container}>
-            <Text>Title</Text>
-            <TextInput
-                style = {styles.input}
-                onChangeText = {onChangeTitle}
-                value = {title}
-                placeholder = ""
-            />
-            <Text>Content</Text>
-            <TextInput
-                style = {styles.input}
-                onChangeText = {onChangeContent}
-                value = {content}
-                placeholder = ""
-            />
-            <Text>Tags(optional)</Text>
-            <TextInput
-                style = {styles.input}
-                onChangeText = {onChangeTags}
-                value = {tags}
-                placeholder = ""
-            />
-            <TouchableOpacity>
-                <View style={styles.button}>
-                    <Text>Post</Text>
-                </View>
-            </TouchableOpacity>
-
-        </SafeAreaView>
-    )
-
-
-}
