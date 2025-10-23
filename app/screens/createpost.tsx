@@ -1,4 +1,3 @@
-
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import React from 'react';
@@ -21,7 +20,7 @@ const CreatePost = () => {
     <SafeAreaView style={styles.container}>
       <View>
         <View>
-          <View style={{alignItems: 'center'}}>
+          <View style={{styles.header}}>
             <Text style={styles.title}>Create a Statement</Text>
           </View>
 
@@ -74,6 +73,14 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
   },
+
+  header: {
+    backgroundColor: '#000',
+    paddingVertical: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
   title: {
     fontSize: 28,
     fontFamily: 'Fraunces_700Bold',
