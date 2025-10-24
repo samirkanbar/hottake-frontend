@@ -1,8 +1,9 @@
 // Armani's Discovery page
 
-import { View, Text, StyleSheet, TextInput, Touchable, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Touchable, TouchableOpacity, ScrollView } from 'react-native'
 import {SafeAreaView} from 'react-native-safe-area-context';
 import React, { useState } from 'react'
+import CardView from '../components/CardView';
 
 const Discovery = () => {
 
@@ -49,23 +50,16 @@ const Discovery = () => {
                     style = {styles.input}
                     placeholder = "Search..."           
                 />
-                
-                <Text style = {styles.title}>Trending Topics</Text>
-                <TouchableOpacity>
-                    <View style={styles.button}>
-                        <Text style={styles.buttonText}> Gameday</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <View style={styles.button}>
-                        <Text style={styles.buttonText}> Local Tally Spots</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <View style={styles.button}>
-                        <Text style={styles.buttonText}>Campus Food</Text>
-                    </View>
-                </TouchableOpacity>
+                <Text style={styles.title}>Trending Topics</Text>
+                <ScrollView contentContainerStyle={{gap: 10}} horizontal={true} showsHorizontalScrollIndicator={false}>
+                    <CardView title={'Gameday'} />
+                    <CardView title={'Local Tally Spots'} />
+                    <TouchableOpacity>
+                        <View style={styles.button}>
+                            <Text style={styles.buttonText}>Campus Food</Text>
+                        </View>
+                    </TouchableOpacity>
+                </ScrollView>
 
                 <Text style = {styles.title}>Upcoming Events</Text>
                 <TouchableOpacity>
