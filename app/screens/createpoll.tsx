@@ -51,18 +51,23 @@ const CreatePoll = () => {
     <LinearGradient
       colors={['#ffe989', '#ff9350', '#ff3131']}
       style={{flex: 1}}>
-    
-      <View style={styles.headerContainer}>
-        <View style={styles.headerInner}>
-              <TouchableOpacity onPress={handleGoBack} style={styles.closeButton}>
-                  <Ionicons name="close" size={28} color="#000" /> 
-              </TouchableOpacity>
-              <Text style={styles.title}>Create A Poll</Text>           
-          </View>
-      </View>
       
       <SafeAreaView style={styles.container}>
         <ScrollView style={styles.contentWrapper} showsVerticalScrollIndicator={false}>
+
+          <View style={styles.headerContainer}>
+            <View style={styles.headerInner}>
+                  <View style={styles.headerContainer}>
+                    <TouchableOpacity onPress={handleGoBack} style={styles.closeButton}>
+                        <Ionicons name="close" size={28} color="#000" /> 
+                    </TouchableOpacity>
+                  </View>
+                  <View style={styles.headerContainer}>
+                    <Text style={styles.title}>Create a Poll</Text>       
+                  </View>  
+                  <View style={styles.headerContainer} />  
+              </View>
+          </View>
 
           <Text style={styles.firstSubtitle}>Title Your Poll:</Text>
           <TextInput
@@ -117,28 +122,21 @@ export default CreatePoll;
 const styles = StyleSheet.create({
   // ---  Containers ---
   container: {
-    flex: 20,
+    flex: 1,
     paddingTop: 0,
     padding: 10,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     width: '100%',
   },
-
   headerContainer: {
-    paddingHorizontal: 10,
-    flex: 0, 
+    flex: 1,
   },
-
   headerInner: {
-    paddingTop: 80,
-    paddingBottom: 5, 
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
+    // justifyContent: 'center',
   },
-
   contentWrapper: {
     flex: 1,
     width: '100%',
@@ -153,24 +151,16 @@ const styles = StyleSheet.create({
     marginTop: 0,
     marginBottom: 0, 
   },
-  
-
-
   closeButton: {
-    position: 'absolute', 
-    left: 0,
-    top: Platform.OS === 'android' ? 20 : 80, 
-    zIndex: 10, 
-    padding: 5, 
+    // position: 'absolute', 
+    // padding: 5, 
   },
-
   subtitle: { 
     fontSize: 20,
     fontFamily: 'Fraunces_400Regular',
     marginTop: 30,
     marginBottom: 0,
   },
-  
   firstSubtitle: {
     fontSize: 20,
     fontFamily: 'Fraunces_400Regular',
