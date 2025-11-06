@@ -1,11 +1,12 @@
 import { View, Text, StyleSheet, TextInput, Touchable, TouchableOpacity, Button } from 'react-native'
 import {SafeAreaView} from 'react-native-safe-area-context';
 import React, { useState } from 'react';
-import createpost from './screens/createpost';
-import CreatePost from './screens/createpost';
+import CreateStatement from './screens/createstatement';
+import CreateQuestion from './screens/createquestion';
+import CreatePoll from './screens/createpoll';
 
 const index = () => {
-  return <CreatePost />
+  return <CreatePoll />
 }
 
 export default index

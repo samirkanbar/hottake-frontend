@@ -6,16 +6,17 @@ import {RobotoCondensed_400Regular,RobotoCondensed_700Bold } from '@expo-google-
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 
-const CreatePost = () => {
+const CreateQuestion = () => {
   const [fontsLoaded] = useFonts({
     RobotoCondensed_400Regular,
     RobotoCondensed_700Bold,
     Fraunces_700Bold,
     Fraunces_400Regular
   });
-    const [Title, onChangeTitle] = React.useState(String);
-    const [content, onChangeContent] = React.useState(String);
-    const [tags, onChangeTags] = React.useState(String);
+
+    const [Title, onChangeQuestion] = React.useState('');
+    const [content, onChangeDescription] = React.useState('');
+    const [tags, onChangeTags] = React.useState('');
   
     const handleGoBack = () => {
   // Replace this with actual navigation or modal closing logic
@@ -28,31 +29,34 @@ const CreatePost = () => {
 
   return (
     <LinearGradient
-      colors={['#ffe8baff', '#ffdb77ff', '#ed3e3eff']}
+      colors={['#ffe989', '#ff9350', '#ff3131']}
       style={{flex: 1}}>
+
+    <View style={styles.headerContainer}>
+      <View style={styles.headerInner}>
+            <TouchableOpacity onPress={handleGoBack} style={styles.closeButton}>
+                <Ionicons name="close" size={28} color="#000" /> 
+            </TouchableOpacity>
+            <Text style={styles.title}>Ask A Question</Text>
+        </View>
+    </View>
     <SafeAreaView style={styles.container}>
-      <View>
-         <TouchableOpacity onPress={handleGoBack} style={styles.closeButton}>
-          <Ionicons name="close" size={24} color="#000" />
-        </TouchableOpacity>
+      <View style={styles.contentWrapper}>
         <View>
-          <View style={styles.header}>
-            <Text style={styles.title}>Create a Statement</Text>
-          </View>
-            <Text style={styles.subtitle}>Title Your Take:</Text>
+            <Text style={styles.firstSubtitle}>What Do You Want To Know?</Text>
             <TextInput
               style={styles.input_small}
-              onChangeText={onChangeTitle}
+              onChangeText={onChangeQuestion}
               value={Title}
-              placeholder="Title"
+              placeholder="Question"
             />
 
-            <Text style={styles.subtitle}>Content:</Text>
+            <Text style={styles.subtitle}>Description (optional):</Text>
             <TextInput
               style={styles.input_large}
-              onChangeText={onChangeContent}
+              onChangeText={onChangeDescription}
               value={content}
-              placeholder="What's your take?"
+              placeholder="Explain your question..."
               multiline={true}
               textAlignVertical='top'
             />
@@ -66,7 +70,7 @@ const CreatePost = () => {
             />
 
           </View>
-            <View style={{flex: 1, justifyContent: 'flex-end', alignItems: 'center'}}>
+          <View style={{flex: 1, justifyContent: 'flex-end', alignItems: 'center'}}>
               <TouchableOpacity onPress={() => {console.log('button pressed!')}}>
                   <View style={styles.button}>
                     <Text style={{color: "#FFF"}}>Post</Text>
@@ -79,45 +83,75 @@ const CreatePost = () => {
   );
 };
 
-export default CreatePost;
+export default CreateQuestion;
 
 const styles = StyleSheet.create({
+
+  // --- Containers ---
   container: {
-    flex: 20,
-    padding: 10,
+    flex: 20, 
+    paddingHorizontal: 10,
+    paddingTop: 0, 
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     width: '100%',
   },
 
-  closeButton: {
-  },
-  header: {
-    //backgroundColor: '#000',
-    height: 60,
-    marginBottom: 30,
-    marginTop: 0,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    flexDirection: 'row',
+  headerContainer: {
+    paddingHorizontal: 10,
+    flex: 0, 
   },
 
+  headerInner: {
+    paddingTop: 80,
+    paddingBottom: 5, 
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  contentWrapper: {
+    flex: 1,
+    width: '100%',
+  },
+
+  // --- Title & Text ---
   title: {
     fontSize: 38,
     fontFamily: 'Fraunces_700Bold',
     color: '#000',
+    marginTop: 0,
+    marginBottom: 0, 
+  },
+
+  closeButton: {
+    position: 'absolute', 
+    left: 0,
+    top: 50,
+    zIndex: 10, 
+    padding: 5, 
   },
 
   subtitle: { 
     fontSize: 20,
     fontFamily: 'Fraunces_400Regular',
+    marginTop: 30,
+    marginBottom: 0,
   },
-  input_small: {
+  
+  firstSubtitle: {
+    fontSize: 20,
+    fontFamily: 'Fraunces_400Regular',
+    marginTop: 5, 
+    marginBottom: 0,
+  },
 
+  // --- Inputs ---
+  input_small: {
     marginTop: 10,
     marginBottom: 30,
     height: 50,
-    width: 375,
+    width: '100%', 
     borderWidth: 1,
     borderRadius: 20,
     padding: 10,
@@ -131,11 +165,10 @@ const styles = StyleSheet.create({
 
   },
   input_large: {
-
     marginTop: 10,
     marginBottom: 30,
     height: 100,
-    width: 375,
+    width: '100%', 
     borderWidth: 1,
     borderRadius: 20,
     padding: 10,
@@ -147,6 +180,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 3,
   },
+
+
   button: {
     marginTop: 20,
     backgroundColor: "#000000ff",
