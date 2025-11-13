@@ -6,7 +6,7 @@ import CreateQuestion from './screens/createquestion';
 import CreatePoll from './screens/createpoll';
 
 const index = () => {
-  return <CreatePoll />
+  return <CreateQuestion/>
 }
 
 export default index

@@ -32,16 +32,23 @@ const CreateQuestion = () => {
       colors={['#ffe989', '#ff9350', '#ff3131']}
       style={{flex: 1}}>
 
-    <View style={styles.headerContainer}>
-      <View style={styles.headerInner}>
-            <TouchableOpacity onPress={handleGoBack} style={styles.closeButton}>
-                <Ionicons name="close" size={28} color="#000" /> 
-            </TouchableOpacity>
-            <Text style={styles.title}>Ask A Question</Text>
-        </View>
-    </View>
     <SafeAreaView style={styles.container}>
       <View style={styles.contentWrapper}>
+
+      <View style={styles.headerContainer}>
+        <View style={styles.headerInner}>
+            <View style={styles.headerContainer}>
+                <TouchableOpacity onPress={handleGoBack} style={styles.closeButton}>
+                    <Ionicons name="close" size={28} color="#000" /> 
+                </TouchableOpacity>
+              </View>
+              <View style={styles.headerContainer}>
+                <Text style={styles.title}>Ask A Question</Text>
+              </View>
+              <View style={styles.headerContainer} />
+          </View>
+      </View>
+
         <View>
             <Text style={styles.firstSubtitle}>What Do You Want To Know?</Text>
             <TextInput
@@ -89,48 +96,40 @@ const styles = StyleSheet.create({
 
   // --- Containers ---
   container: {
-    flex: 20, 
-    paddingHorizontal: 10,
-    paddingTop: 0, 
+    flex: 1, 
+    paddingTop: 0,
+    padding: 10, 
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     width: '100%',
   },
 
   headerContainer: {
-    paddingHorizontal: 10,
-    flex: 0, 
+    flex: 1,
   },
 
   headerInner: {
-    paddingTop: 80,
-    paddingBottom: 5, 
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    //justifyContent: 'center',
   },
 
   contentWrapper: {
     flex: 1,
     width: '100%',
+    paddingBottom: 50,
   },
 
   // --- Title & Text ---
   title: {
-    fontSize: 38,
+    fontSize: 35,
     fontFamily: 'Fraunces_700Bold',
     color: '#000',
     marginTop: 0,
     marginBottom: 0, 
   },
 
-  closeButton: {
-    position: 'absolute', 
-    left: 0,
-    top: 50,
-    zIndex: 10, 
-    padding: 5, 
-  },
+  closeButton: { },
 
   subtitle: { 
     fontSize: 20,
@@ -190,5 +189,6 @@ const styles = StyleSheet.create({
     width: 200,
     justifyContent: 'center',
     alignItems:'center',
+  
   },
 });
