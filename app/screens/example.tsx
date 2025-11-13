@@ -41,7 +41,7 @@ export default Example;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 20,
+    flex: 1,
     padding: 10,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
