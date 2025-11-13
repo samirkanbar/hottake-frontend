@@ -3,9 +3,10 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import React, { useState } from 'react';
 import createpost from './screens/createpost';
 import CreatePost from './screens/createpost';
+import Example from './screens/example';
 
 const index = () => {
-  return <CreatePost />
+  return <Example />
 }
 
 export default index
