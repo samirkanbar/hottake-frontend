@@ -6,7 +6,7 @@ import {RobotoCondensed_400Regular,RobotoCondensed_700Bold } from '@expo-google-
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 
-const Example = () => {
+const EventPage = () => {
   const [fontsLoaded] = useFonts({
     RobotoCondensed_400Regular,
     RobotoCondensed_700Bold,
@@ -37,7 +37,7 @@ const Example = () => {
   );
 }
 
-export default Example;
+export default EventPage;
 
 const styles = StyleSheet.create({
   container: {
