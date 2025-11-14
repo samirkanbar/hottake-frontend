@@ -4,35 +4,25 @@ import React, { useState } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 
-const CreateAccount = () => {
+const SignIn = () => {
 
-    const [email, onChangeEmail] = useState('');
-    const [password, onChangePassword] = useState('');
-    const [checkPassword, onChangeCheckPassword] = useState('');
     const [username, onChangeUsername] = useState('');
+    const [password, onChangePassword] = useState('');
 
     return (
-        <LinearGradient
-            colors={['#ffe989', '#ff9350', '#ff3131']} 
-            style={{flex: 1}}>
-        
-
+         <LinearGradient
+                    colors={['#ffe989', '#ff9350', '#ff3131']} 
+                    style={{flex: 1}}>
             <SafeAreaView style={styles.container}>
-                <Text style={styles.title}>Create an account</Text>
-<Text style={styles.text}>Enter email:</Text>
-                <TextInput
-                    style={styles.input}
-                    onChangeText={onChangeEmail}
-                    value={email}
-                    placeholder="email@domain.com"
-                    placeholderTextColor="#888"
-                />
-<Text style={styles.text}>Enter username:</Text>
+                <Text style={styles.title}>Sign in</Text>
+
+
+<Text style={styles.text}>Enter email/username:</Text>
                 <TextInput
                     style={styles.input}
                     onChangeText={onChangeUsername}
                     value={username}
-                    placeholder="Enter username"
+                    placeholder="Your Password"
                     placeholderTextColor="#888"
                 />
 
@@ -41,26 +31,10 @@ const CreateAccount = () => {
                     style={styles.input}
                     onChangeText={onChangePassword}
                     value={password}
-                    placeholder="Enter password"
+                    placeholder="Your Password"
                     placeholderTextColor="#888"
                 />
 
-<Text style={styles.text}>Enter email:</Text>
-                <TextInput
-                    style={styles.input}
-                    onChangeText={onChangeCheckPassword}
-                    value={checkPassword}
-                    placeholder="Re-enter password"
-                    placeholderTextColor="#888"
-                />
-
-
-
-                <TouchableOpacity onPress={() => console.log('button pressed!')}>
-                    <View style={styles.button}>
-                        <Text style={{ color: "#FFF" }}>Continue</Text>
-                    </View>
-                </TouchableOpacity>
 
                 <View style={styles.dividerRow}>
                     <View style={styles.divider} />
@@ -82,6 +56,8 @@ Continue with Apple</Text>
 
 
 
+
+
                 <Text style={styles.termsText}>
                     By clicking continue, you agree to our{' '}
                     <Text style={styles.linkText} onPress={() => Linking.openURL('https://www.fsu.edu/')}>
@@ -92,12 +68,15 @@ Continue with Apple</Text>
                         Privacy Policy
                     </Text>
                 </Text>
-            </SafeAreaView>
+
+
+
+                </SafeAreaView> 
         </LinearGradient>
     );
 };
 
-export default CreateAccount;
+export default SignIn;
 
 const styles = StyleSheet.create({
     gradient: {
@@ -112,7 +91,7 @@ const styles = StyleSheet.create({
         width: 350,
         justifyContent: 'center',
     },
-    container: {\
+    container: {
         flex: 1,
         //justifyContent: 'center',
         alignItems: 'center',
