@@ -5,6 +5,7 @@ import { useFonts, Fraunces_700Bold, Fraunces_400Regular } from '@expo-google-fo
 import {RobotoCondensed_400Regular,RobotoCondensed_700Bold } from '@expo-google-fonts/roboto-condensed';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
+//import { HeaderTitle } from '@react-navigation/elements';
 
 const CreatePoll = () => {
   const [fontsLoaded] = useFonts({
@@ -55,20 +56,18 @@ const CreatePoll = () => {
       <SafeAreaView style={styles.container}>
         <ScrollView style={styles.contentWrapper} showsVerticalScrollIndicator={false}>
 
-          <View style={styles.headerContainer}>
-            <View style={styles.headerInner}>
-                  <View style={styles.headerContainer}>
+                  <View style={styles.headerInner}>
                     <TouchableOpacity onPress={handleGoBack} style={styles.closeButton}>
                         <Ionicons name="close" size={28} color="#000" /> 
                     </TouchableOpacity>
+                  
+                  <View style={styles.HeaderTitleWrapper}>
+                    <Text style={styles.title}>Create a Poll</Text>      
                   </View>
-                  <View style={styles.headerContainer}>
-                    <Text style={styles.title}>Create a Poll</Text>       
-                  </View>  
-                  <View style={styles.headerContainer} />  
-              </View>
+            <View style={{flex: 1}} />
           </View>
 
+        <View style={styles.inputContainer}>
           <Text style={styles.firstSubtitle}>Title Your Poll:</Text>
           <TextInput
             style={styles.input_small}
@@ -101,6 +100,7 @@ const CreatePoll = () => {
             value={tags}
             placeholder="Add tags"
           />
+        </View>
 
           <View style={{alignItems: 'center', marginVertical: 20}}>
             <TouchableOpacity onPress={handlePostPoll}>
@@ -124,26 +124,32 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 0,
-    padding: 10,
+    paddingHorizontal: 15,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     width: '100%',
   },
-  headerContainer: {
-    flex: 1,
+  inputContainer: {
   },
+
   headerInner: {
     flexDirection: 'row',
     alignItems: 'center',
-    // justifyContent: 'center',
+    paddingVertical: 10,
   },
+
+  HeaderTitleWrapper: {
+    marginLeft: 15,
+    flexShrink: 1,
+  },
+
   contentWrapper: {
     flex: 1,
     width: '100%',
     paddingBottom: 50, 
   },
 
-  // --- Title & Text ---
+  // Title & Text
   title: {
     fontSize: 38,
     fontFamily: 'Fraunces_700Bold',
@@ -152,8 +158,7 @@ const styles = StyleSheet.create({
     marginBottom: 0, 
   },
   closeButton: {
-    // position: 'absolute', 
-    // padding: 5, 
+    padding: 5, 
   },
   subtitle: { 
     fontSize: 20,
@@ -178,6 +183,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#FFF',
     fontFamily: 'RobotoCondensed_400Regular',
+
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
