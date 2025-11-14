@@ -4,9 +4,10 @@ import React, { useState } from 'react';
 import CreateStatement from './screens/createstatement';
 import CreateQuestion from './screens/createquestion';
 import CreatePoll from './screens/createpoll';
+import SelectType from './screens/selecttype';
 
 const index = () => {
-  return <CreatePoll/>
+  return <SelectType/>
 }
 
 export default index
