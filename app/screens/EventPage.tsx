@@ -32,7 +32,7 @@ const EventPage = () => {
       colors={['#ffe8baff', '#ffdb77ff', '#ed3e3eff']}
       style={{flex: 1}}>
       <SafeAreaView style={styles.container}>
-        <EventBanner username="Carter"/>
+        <EventBanner event_name="Carter"/>
       </SafeAreaView>
     </LinearGradient>
   );
