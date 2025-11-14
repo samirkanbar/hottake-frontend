@@ -8,7 +8,7 @@ type EventBannerProps = {
 const EventBanner: React.FC<EventBannerProps> = ({ event_name }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Hello {event_name}!</Text>
+      <Text style={styles.title}>{event_name}</Text>
     </View>
   )
 }

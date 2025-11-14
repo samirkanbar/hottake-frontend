@@ -6,6 +6,8 @@ import {RobotoCondensed_400Regular,RobotoCondensed_700Bold } from '@expo-google-
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import EventBanner from '../components/EventBanner'
+import EventPicture from '../components/EventPicture';
+import EventDesc from '../components/EventDesc';
 
 const EventPage = () => {
   const [fontsLoaded] = useFonts({
@@ -32,7 +34,9 @@ const EventPage = () => {
       colors={['#ffe8baff', '#ffdb77ff', '#ed3e3eff']}
       style={{flex: 1}}>
       <SafeAreaView style={styles.container}>
-        <EventBanner event_name="Carter"/>
+        <EventPicture/>
+        <EventBanner event_name="Event Name"/>
+        <EventDesc event_desc='Description goes here'/>
       </SafeAreaView>
     </LinearGradient>
   );

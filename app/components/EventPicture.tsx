@@ -14,7 +14,8 @@ export default EventPicture
 const styles = StyleSheet.create({
   container: {
     width: 350,
-    height: 250,
+    height: 150,
+    borderRadius: 20,
     backgroundColor: '#ffff'
   }
 })
