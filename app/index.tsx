@@ -1,11 +1,12 @@
-import { View, Text, StyleSheet, TextInput, Touchable, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Touchable, TouchableOpacity, Button } from 'react-native'
 import {SafeAreaView} from 'react-native-safe-area-context';
-import React, { useState } from 'react'
-import SignIn from './screens/(auth)/signIn';
-import CreateAccount from './screens/(auth)/CreateAccount';
+import React, { useState } from 'react';
+import Tabs from './(tabs)/_layout';
+import createpost from './screens/createpost';
+import CreatePost from './screens/createpost';
 
 const index = () => {
-    return <CreateAccount />
+  return <Tabs />
 }
 
 export default index
