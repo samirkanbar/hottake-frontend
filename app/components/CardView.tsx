@@ -1,15 +1,16 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 
 interface CardProps {
-    title: string;
+    image: any;
 }
 
-const CardView: React.FC<CardProps> = ({ title }) => {
+const CardView: React.FC<CardProps> = ({ image }) => {
     return(
         <TouchableOpacity>
-            <View style={styles.button}>
-                <Text style={styles.buttonText}>{title}</Text>
+            <View
+                style={styles.button}> {image &&
+                <Image source={image} style={styles.image} resizeMode="cover" />}
             </View>
         </TouchableOpacity>
     )
@@ -21,14 +22,20 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: "#000",
         borderRadius: 20,
-        height: 50,
-        width: 350,
+        height: 200,
+        width: 300,
         justifyContent: 'center',
-        alignItems:'center'
+        alignItems:'center',
+        overflow: "hidden",
     },
     buttonText: {
         color: '#fff',
-        fontSize: 16,
+        fontSize: 10,
         fontWeight: 'bold',
-    }
+    },
+    image: {
+        width: '100%',
+        height: '100%',
+        position: "absolute",
+    },
 })

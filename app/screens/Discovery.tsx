@@ -2,83 +2,68 @@
 
 import { View, Text, StyleSheet, TextInput, Touchable, TouchableOpacity, ScrollView } from 'react-native'
 import {SafeAreaView} from 'react-native-safe-area-context';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { LinearGradient } from 'expo-linear-gradient';
 import CardView from '../components/CardView';
+import { useFonts, Fraunces_700Bold, Fraunces_400Regular } from '@expo-google-fonts/fraunces';
 
 const Discovery = () => {
+    const [fontsLoaded] = useFonts({
+        Fraunces_700Bold,
+        Fraunces_400Regular,
+    });
 
-//   const [title, onChangeTitle] = useState(String)
-//   const [content, onChangeContent] = useState(String)
-//   const [tags, onChangeTags] = useState(String)
-    
-//     return (
-//       <SafeAreaView style={styles.container}>
-//           <Text>Title </Text>
-//           <TextInput
-//               style = {styles.input}
-//               onChangeText = {onChangeTitle}
-//               value = {title}
-//               placeholder = ""
-//           />
-//           <Text>Content</Text>
-//           <TextInput
-//               style = {styles.input}
-//               onChangeText = {onChangeContent}
-//               value = {content}
-//               placeholder = ""
-//           />
-//           <Text>Tags(optional)</Text>
-//           <TextInput
-//               style = {styles.input}
-//               onChangeText = {onChangeTags}
-//               value = {tags}
-//               placeholder = ""
-//           />
-//           <TouchableOpacity>
-//               <View style={styles.button}>
-//                   <Text>Post</Text>
-//               </View>
-//           </TouchableOpacity>
+    if (!fontsLoaded) {
+        return null;
+    }
 
-//       </SafeAreaView>
-//     )
         return (
-            <SafeAreaView style={styles.container}>
-                <Text style = {styles.header}>Find a new take</Text>
+            <LinearGradient
+                colors={['#ffe989', '#ff9350', '#ff3131']}
+                style={{flex: 1}}>
+                <SafeAreaView style={styles.container}>
+                    <Text style = {styles.header}>Find a new take</Text>
 
-                <TextInput
-                    style = {styles.input}
-                    placeholder = "Search..."           
-                />
-                <Text style={styles.title}>Trending Topics</Text>
-                <ScrollView contentContainerStyle={{gap: 10}} horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <CardView title={'Gameday'} />
-                    <CardView title={'Local Tally Spots'} />
-                    <TouchableOpacity>
-                        <View style={styles.button}>
-                            <Text style={styles.buttonText}>Campus Food</Text>
+                    <TextInput
+                        style = {styles.input}
+                        placeholder = "Search..."           
+                    />
+                    <View style={{ height: 10 }} /> 
+                    <Text style={styles.title}>Trending Topics</Text>
+                    <ScrollView contentContainerStyle={{gap: 10}} horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <View style={{ alignItems: 'center' }}>
+                            <CardView image={require('../../assets/images/gameday.webp')} />
+                            <Text style = {styles.cardLabel}>Gameday</Text>
                         </View>
-                    </TouchableOpacity>
-                </ScrollView>
+                        <View style={{ alignItems: 'center' }}>
+                            <CardView image={require('../../assets/images/local tally spots.webp')} />
+                            <Text style = {styles.cardLabel}>Local Tally Spots</Text>
+                        </View>
+                        <View style={{ alignItems: 'center' }}>
+                            <CardView image={require('../../assets/images/suwannee.webp')} />
+                            <Text style = {styles.cardLabel}>Campus Food</Text>
+                        </View>
+                    </ScrollView>
+                    <View style={{ height: 10 }} /> 
 
-                <Text style = {styles.title}>Upcoming Events</Text>
-                <TouchableOpacity>
-                    <View style={styles.button}>
-                        <Text style={styles.buttonText}>Seminole Innovators Meeting</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <View style={styles.button}>
-                        <Text style={styles.buttonText}> Rocky Horror Picture Show @ ASLC</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <View style={styles.button}>
-                        <Text style={styles.buttonText}> Market Wednesday</Text>
-                    </View>
-                </TouchableOpacity>
-
-            </SafeAreaView>
+                    <Text style = {styles.title}>Upcoming Events</Text>
+                    <ScrollView contentContainerStyle={{gap: 10}} horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <View style={{ alignItems: 'center' }}>
+                            <CardView image={require('../../assets/images/seminole innovators.jpg')} />
+                            <Text style = {styles.cardLabel}>Seminole Innovators Meeting</Text>
+                        </View>
+                        <View style={{ alignItems: 'center' }}>
+                            <CardView image={require('../../assets/images/rocky horror.jpg')} />
+                            <Text style = {styles.cardLabel}>Rocky Horror Picture Show @ ASLC</Text>
+                        </View>
+                        <View style={{ alignItems: 'center' }}>
+                            <CardView image={require('../../assets/images/market wednesday.webp')} />
+                            <Text style = {styles.cardLabel}>Market Wednesday</Text>
+                        </View>
+                    </ScrollView>
+                    
+                </SafeAreaView>
+            </LinearGradient>
 
         )
 }
@@ -92,12 +77,14 @@ const styles = StyleSheet.create({
             gap: 10
         },
         title: {
-            fontSize: 15,
-            fontWeight: 'bold'
+            fontSize: 20,
+            fontFamily: 'Fraunces_400Regular',
+            fontWeight: 'normal',
         },
         header: {
             fontSize: 40,
-            fontWeight: 'bold'
+            fontFamily: 'Fraunces_700Bold',
+            fontWeight: 'normal',
         },
         input: {
             height: 50,
@@ -117,6 +104,12 @@ const styles = StyleSheet.create({
         buttonText: {
             color: '#fff',
             fontSize: 16,
-            fontWeight: 'bold',
-        }
+            fontFamily: 'Fraunces_400Regular',
+        },
+        cardLabel: {
+            marginTop: 6,
+            fontSize: 14,
+            fontWeight: '500',
+            textAlign: 'center',
+        },
     });
