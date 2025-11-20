@@ -7,7 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 //import { HeaderTitle } from '@react-navigation/elements';
 
-const CreatePoll = () => {
+const SelectType = () => {
   const [fontsLoaded] = useFonts({
     RobotoCondensed_400Regular,
     RobotoCondensed_700Bold,
@@ -15,9 +15,6 @@ const CreatePoll = () => {
     Fraunces_400Regular
   });
   
-  const [pollTitle, setPollTitle] = useState('');
-  const [choices, setChoices] = useState(['', '']);
-  const [tags, onChangeTags] = useState('');
 
   const handleGoBack = () => { // Replace this with actual navigation or modal closing logic
     console.log('Navigating back/closing screen...'); 
@@ -78,7 +75,7 @@ const CreatePoll = () => {
   );
 };
 
-export default CreatePoll;
+export default SelectType;
 
 
 const styles = StyleSheet.create({
@@ -91,6 +88,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     width: '100%',
   },
+
   inputContainer: {
   },
 
@@ -119,41 +117,10 @@ const styles = StyleSheet.create({
     marginTop: 0,
     marginBottom: 0, 
   },
+
   closeButton: {
     padding: 5, 
   },
-  subtitle: { 
-    fontSize: 20,
-    fontFamily: 'Fraunces_400Regular',
-    marginTop: 30,
-    marginBottom: 0,
-  },
-  firstSubtitle: {
-    fontSize: 20,
-    fontFamily: 'Fraunces_400Regular',
-    marginTop: 5, 
-    marginBottom: 0,
-  },
-
-  // --- Inputs  ---
-  input_small: {
-    marginTop: 10,
-    marginBottom: 30, 
-    width: '100%', 
-    borderWidth: 1,
-    borderRadius: 20,
-    padding: 10,
-    backgroundColor: '#FFF',
-    fontFamily: 'RobotoCondensed_400Regular',
-
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 3,
-  },
-  
- 
-
   
   button: {
     marginTop: 80,

@@ -5,9 +5,10 @@ import CreateStatement from './screens/createstatement';
 import CreateQuestion from './screens/createquestion';
 import CreatePoll from './screens/createpoll';
 import SelectType from './screens/selecttype';
+import Profile from './screens/profile';
 
 const index = () => {
-  return <SelectType/>
+  return <Profile/>
 }
 
 export default index
