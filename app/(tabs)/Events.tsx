@@ -57,15 +57,15 @@ const Events = () => {
             backdropComponent={BottomSheetBackdrop}
           >
             <BottomSheetView style={{flex: 1}}>
-              <LinearGradient
-                colors={['#ffe8baff', '#ffdb77ff', '#ed3e3eff']}
-                style={{flex: 1}}
-              >
-                  <EventTitle event_name = "Event Name"/>
-                  <EventBanner/>
-                  <EventDescription event_desc='Description goes here'/>
-                  <RSVPButton />
-              </LinearGradient>
+                <LinearGradient
+                  colors={['#ffe8baff', '#ffdb77ff', '#ed3e3eff']}
+                  style={{flex: 1}}
+                >
+                    <EventTitle event_name = "Event Name"/>
+                    <EventBanner/>
+                    <EventDescription event_desc='Description goes here'/>
+                    <RSVPButton />
+                </LinearGradient>
             </BottomSheetView>
           </BottomSheet>
         </SafeAreaView>
