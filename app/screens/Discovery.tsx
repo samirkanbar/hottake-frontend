@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
         },
         cardLabel: {
             marginTop: 6,
-            fontSize: 14,
+            fontSize: 16,
             fontWeight: '500',
             textAlign: 'center',
         },
