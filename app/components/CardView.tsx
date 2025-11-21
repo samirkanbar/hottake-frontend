@@ -9,8 +9,8 @@ const CardView: React.FC<CardProps> = ({ image }) => {
     return(
         <TouchableOpacity>
             <View
-                style={styles.button}> {image &&
-                <Image source={image} style={styles.image} resizeMode="cover" />}
+                style={styles.button}>
+                <Image source={image} style={styles.image} resizeMode="cover" />
             </View>
         </TouchableOpacity>
     )

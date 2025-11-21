@@ -3,9 +3,9 @@ import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './index';
 import Create from './Create';
-import Discover from './Discover';
 import Events from './Events';
 import Profile from './Profile';
+import Discovery from './Discovery';
 
 const Tab = createBottomTabNavigator();
 
@@ -29,8 +29,8 @@ const Tabs = () => {
           }}
         />
         <Tab.Screen
-          name="Discover"
-          component={Discover}
+          name="Events"
+          component={Events}
           options={{
             tabBarLabel: () => null,
             tabBarIcon: ({ color, size }) => (
@@ -49,8 +49,8 @@ const Tabs = () => {
           }}
         />
         <Tab.Screen
-          name="Events"
-          component={Events}
+          name="Discovery"
+          component={Discovery}
           options={{
             tabBarLabel: () => null,
             tabBarIcon: ({ color, size }) => (
