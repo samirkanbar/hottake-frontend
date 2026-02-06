@@ -4,9 +4,10 @@ import React, { useState } from 'react';
 import Tabs from './(tabs)/_layout';
 import createpost from './screens/createpost';
 import CreatePost from './screens/createpost';
+import Discovery from './(tabs)/Discovery';
 
 const index = () => {
-  return <Tabs />
+  return <Discovery />
 }
 
 export default index
