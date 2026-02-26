@@ -25,31 +25,42 @@ const Profile = () => {
 
   return (
 
-    <LinearGradient
-      colors={['#ffe989', '#ff9350', '#ff3131']}
-      style={{flex: 1}}>
+    <LinearGradient colors={['#ffe989', '#ff9350', '#ff3131']} style={{flex: 1}}>
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.contentWrapper} showsVerticalScrollIndicator={false}>
-        <View style={styles.headerInner}>
-          <TouchableOpacity onPress={handleGoBack} style={styles.closeButton}>
-            <Ionicons name="close" size={28} color="#000" /> 
-          </TouchableOpacity>
-        
-          <View style={styles.headerTitleWrapper}>
-            <Text style={styles.title}>Profile</Text>      
-          </View>
-          <View style={{flex: 1}} />
-        </View>
 
-        <View style={{ alignItems: "center", marginTop: 20}}>
-          <View style={styles.ProfileView}>
-            <Image source={{ uri: 'https://avatar.iran.liara.run/public/18' }} style={styles.profileImage} />
+        {/* header with back and profile */}
+          <View style={styles.headerInner}>
+            <TouchableOpacity onPress={handleGoBack} style={styles.closeButton}>
+              <Ionicons name="close" size={28} color="#000" /> 
+            </TouchableOpacity>
+              <View style={styles.headerTitleWrapper}>
+                <Text style={styles.title}>Profile</Text>      
+              </View>
           </View>
-        </View>
+
+        {/* profile photo */}
+          <View style={{ alignItems: "center", marginTop: 20}}>
+            <View style={styles.ProfileView}>
+              <Image source={{ uri: 'https://avatar.iran.liara.run/public/18' }} style={styles.profileImage} />
+            </View>
+          </View>
+
+
 
         <View style={{ alignItems: 'center', marginTop: 20}}>
           <Text style={styles.title}>@Username</Text>
         </View>
+
+        <View style={{ alignItems: 'flex-start', marginTop: 20}}>
+          <Text style={styles.subtitle}>Your Posts:</Text>
+        </View>
+        
+        <View style={{ alignItems: 'flex-start', marginTop: 20}}>
+          <Text style={styles.subtitle}>Your Comments:</Text>
+        </View>
+
+        
 
         <View>  
         

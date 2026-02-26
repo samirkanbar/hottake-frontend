@@ -79,7 +79,7 @@ export default SelectType;
 
 
 const styles = StyleSheet.create({
-  // ---  Containers ---
+  // Containers 
   container: {
     flex: 1,
     paddingTop: 0,
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     paddingBottom: 50, 
   },
 
-  // Title & Text
+  // Title + Text
   title: {
     fontSize: 38,
     fontFamily: 'Fraunces_700Bold',

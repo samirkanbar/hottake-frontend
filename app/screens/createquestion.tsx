@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     flexShrink: 1, // shrink title if needed
   },
 
-  // --- Title & Text ---
+  // Title + Text
   title: {
     fontSize: 35,
     fontFamily: 'Fraunces_700Bold',
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
 
-  // --- Inputs ---
+  // Inputs 
   input_small: {
     marginTop: 10,
     marginBottom: 30,

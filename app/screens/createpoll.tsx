@@ -19,7 +19,7 @@ const CreatePoll = () => {
   const [choices, setChoices] = useState(['', '']);
   const [tags, onChangeTags] = useState('');
 
-  const handleGoBack = () => { // Replace this with actual navigation or modal closing logic
+  const handleGoBack = () => { // Replace this with actual 
     console.log('Navigating back/closing screen...'); 
   };
 
@@ -120,7 +120,7 @@ export default CreatePoll;
 
 
 const styles = StyleSheet.create({
-  // ---  Containers ---
+  // Containers 
   container: {
     flex: 1,
     paddingTop: 0,
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     paddingBottom: 50, 
   },
 
-  // Title & Text
+  // Title + Text
   title: {
     fontSize: 38,
     fontFamily: 'Fraunces_700Bold',
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
 
-  // --- Inputs  ---
+  // Inputs 
   input_small: {
     marginTop: 10,
     marginBottom: 30, 
