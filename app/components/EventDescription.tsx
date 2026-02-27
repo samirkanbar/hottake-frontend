@@ -18,11 +18,12 @@ export default EventDescription
 const styles = StyleSheet.create({
     container: {
         width: 350,
-        height: 350,
+        height: 150,
         borderRadius: 20,
         backgroundColor: '#ffff',
         borderColor: '#000',
         borderWidth: 1.5,
+        alignContent: "center"
     },
     text: {
         fontFamily: 'RobotoCondensed_400Regular',

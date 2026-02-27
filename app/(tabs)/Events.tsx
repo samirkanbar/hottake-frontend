@@ -51,25 +51,24 @@ const Events = () => {
         
           <BottomSheet
             ref={bottomSheetRef}
-            snapPoints={snapPoints}
+            snapPoints= {[200, '50%']}
             index={-1}
             enablePanDownToClose
             backdropComponent={BottomSheetBackdrop}
           >
-            <BottomSheetView style={{flex: 1}}>
+            <BottomSheetView style={styles.bottomSheetContainer}>
                 <LinearGradient
-                  colors={['#ffe8baff', '#ffdb77ff', '#ed3e3eff']}
-                  style={{flex: 1}}
-                >
+                  colors={['rgb(255, 255, 255)', '#ffdb77ff', '#ed3e3eff']}
+                  style={StyleSheet.absoluteFill}
+                />
                     <EventTitle event_name = "Event Name"/>
                     <EventBanner/>
                     <EventDescription event_desc='Description goes here'/>
                     <RSVPButton />
-                </LinearGradient>
             </BottomSheetView>
           </BottomSheet>
-        </SafeAreaView>
-      </GestureHandlerRootView>
+      </SafeAreaView>
+    </GestureHandlerRootView>
   )
 }
 
@@ -84,7 +83,6 @@ const styles = StyleSheet.create({
   },
   bottomSheetContainer: {
     flex: 1,
-    padding: 10,
     alignItems: 'center',
     width: '100%',
   },

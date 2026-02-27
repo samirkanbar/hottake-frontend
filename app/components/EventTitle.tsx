@@ -24,10 +24,11 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginBottom: 10,
     justifyContent: 'center'
+
   },
     title: {
     fontFamily: 'RobotoCondensed_400Regular',
-    fontSize: 38,
+    fontSize: 28,
     color: '#000',
     textAlign: 'center',
   }
