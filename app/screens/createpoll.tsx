@@ -5,9 +5,12 @@ import { useFonts, Fraunces_700Bold, Fraunces_400Regular } from '@expo-google-fo
 import {RobotoCondensed_400Regular,RobotoCondensed_700Bold } from '@expo-google-fonts/roboto-condensed';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
+
 //import { HeaderTitle } from '@react-navigation/elements';
 
 const CreatePoll = () => {
+  const router = useRouter();
   const [fontsLoaded] = useFonts({
     RobotoCondensed_400Regular,
     RobotoCondensed_700Bold,
@@ -19,9 +22,10 @@ const CreatePoll = () => {
   const [choices, setChoices] = useState(['', '']);
   const [tags, onChangeTags] = useState('');
 
-  const handleGoBack = () => { // Replace this with actual 
-    console.log('Navigating back/closing screen...'); 
+ const handleGoBack = () => {
+    router.back();
   };
+
 
   const handlePostPoll = () => {
     // same thing with actual logic later
