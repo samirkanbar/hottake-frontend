@@ -14,7 +14,7 @@ const Tabs = () => {
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
-          tabBarActiveTintColor: '#000',
+          tabBarActiveTintColor: '#010',
           tabBarInactiveTintColor: 'gray',
         }}
       >
