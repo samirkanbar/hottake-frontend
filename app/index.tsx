@@ -3,9 +3,10 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import React, { useState } from 'react'
 import CreatePost from './screens/Discovery';
 import Discovery from './screens/Discovery';
+import HomePage from '../app/screens/HomePage';
 
 const index = () => {
-    return <Discovery />
+    return <HomePage />
 }
 
 export default index;
