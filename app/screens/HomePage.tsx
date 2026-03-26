@@ -25,12 +25,12 @@ const HomePage = () => {
                     <View style={{ height: 10 }} /> 
                     <Text style={styles.title}>Featured Hot Take</Text>
                     
-                    /* Show a featured post */
+                    {/* Show a featured post */}
 
                     <View style={{ height: 10 }} /> 
                     <Text style = {styles.title}>Featured Poll</Text>
 
-                    /* Show a featured poll */
+                    {/* Show a featured poll */}
 
                     <View style={{ height: 10 }} /> 
                     <Text style = {styles.title}>Featured Event</Text>
