@@ -33,9 +33,6 @@ const Create = () => {
               {/* back button and title */}
                <View style={styles.contentWrapper}>
                          <View style={styles.headerInner}>
-                           <TouchableOpacity onPress={handleGoBack} style={styles.closeButton}>
-                             <Ionicons name="close" size={28} color="#000" /> 
-                           </TouchableOpacity>
                
                            <View style={styles.HeaderTitleWrapper}>
                              <Text style={styles.title}>Create Something</Text>
@@ -43,7 +40,7 @@ const Create = () => {
                   </View>
                   {/* button for create question */}
                     <View style={{flex: 1, justifyContent: 'flex-start', alignItems: 'center'}}>
-                              <TouchableOpacity onPress={() => router.push('../screens/createquestion')}>
+                              <TouchableOpacity onPress={() => router.push('/post/createquestion')}>
                                 <View style={styles.button}>
                                   <Text style={{color: "#FFF", fontFamily: 'RobotoCondensed_700Bold', fontSize: 25}}>Create Question</Text>
                                 </View>
@@ -52,7 +49,7 @@ const Create = () => {
 
                   {/* button for create poll */}
                     <View style={{flex: 1, justifyContent: 'flex-start', alignItems: 'center'}}>
-                              <TouchableOpacity onPress={() => router.push('../screens/createpoll')}>
+                              <TouchableOpacity onPress={() => router.push('/post/createpoll')}>
                                 <View style={styles.button}>
                                   <Text style={{color: "#FFF", fontFamily: 'RobotoCondensed_700Bold', fontSize: 25}}>Create Poll</Text>
                                 </View>
@@ -61,7 +58,7 @@ const Create = () => {
 
                     {/* button for create statement */}
                     <View style={{flex: 1, justifyContent: 'flex-start', alignItems: 'center'}}>
-                              <TouchableOpacity onPress={() => router.push('../screens/createstatement')}>
+                              <TouchableOpacity onPress={() => router.push('/post/createstatement')}>
                                 <View style={styles.button}>
                                   <Text style={{color: "#FFF", fontFamily: 'RobotoCondensed_700Bold', fontSize: 25}}>Create Statement</Text>
                                 </View>
@@ -93,6 +90,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 10,
+    justifyContent: 'center',
   },
 
   HeaderTitleWrapper: {
