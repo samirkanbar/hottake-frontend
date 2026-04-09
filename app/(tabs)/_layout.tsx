@@ -28,7 +28,7 @@ const Tabs = () => {
             ),
           }}
         />
-        <Tab.Screen
+        {/* <Tab.Screen
           name="Events"
           component={Events}
           options={{
@@ -37,7 +37,7 @@ const Tabs = () => {
               <Ionicons name="search" size={size} color={color} />
             ),
           }}
-        />
+        /> */}
         <Tab.Screen
           name="Create"
           component={Create}
