@@ -34,6 +34,8 @@ const HomePage = () => {
 
                     <View style={{ height: 10 }} /> 
                     <Text style = {styles.title}>Featured Event</Text>
+
+                    {/* Show a featured event */}
                 
                     
                 </SafeAreaView>
