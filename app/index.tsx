@@ -1,12 +1,10 @@
-import { View, Text, StyleSheet, TextInput, Touchable, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Touchable, TouchableOpacity, Button } from 'react-native'
 import {SafeAreaView} from 'react-native-safe-area-context';
-import React, { useState } from 'react'
-import CreatePost from './screens/Discovery';
-import Discovery from './screens/Discovery';
-import HomePage from '../app/screens/HomePage';
+import React, { useState } from 'react';
+import Tabs from './(tabs)/_layout';
 
 const index = () => {
-    return <HomePage />
+  return <Tabs />
 }
 
-export default index;
+export default index
