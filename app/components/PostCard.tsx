@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient"
 
 type PostCardProps = {
@@ -12,16 +12,19 @@ type PostCardProps = {
 const PostCard: React.FC<PostCardProps> = ({ username, created_at, title, content }) => {
     return(
         <TouchableOpacity>
+          <View
+            style={styles.button}>
             <View style={styles.header}>
-                <Text style={styles.username}>{post.username}</Text>
-                <Text style={styles.timestamp}> {" • "} {post.created_at}</Text>
+                <Text style={styles.username}>{username}</Text>
+                <Text style={styles.timestamp}> {" • "} {created_at}</Text>
             </View>
             <View>
-                <Text style={styles.title}>{post.title}</Text>
+                <Text style={styles.title}>{title}</Text>
             </View>
             <View>
-                <Text style={styles.content}>{post.content}</Text>
+                <Text style={styles.content}>{content}</Text>
             </View>
+          </View>
         </TouchableOpacity>
     )
 }
@@ -29,6 +32,15 @@ const PostCard: React.FC<PostCardProps> = ({ username, created_at, title, conten
 export default PostCard;
 
 const styles = StyleSheet.create({
+  button: {
+    backgroundColor: "#ffffff",
+    borderRadius: 20,
+    height: 100,
+    width: 350,
+    justifyContent: 'center',
+    padding: 12,
+    marginVertical: 6,
+  },
   header: {
     flexDirection: "row",
     alignItems: "center",

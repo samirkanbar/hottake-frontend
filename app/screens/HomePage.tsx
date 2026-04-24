@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, TextInput, Touchable, TouchableOpacity, ScrollV
 import {SafeAreaView} from 'react-native-safe-area-context';
 import React, { useState } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
-import CardView from '../components/CardView';
+import PostCard from '../components/PostCard';
 import { useFonts, Fraunces_700Bold, Fraunces_400Regular } from '@expo-google-fonts/fraunces';
 
 const HomePage = () => {
@@ -23,19 +23,19 @@ const HomePage = () => {
                     <Text style = {styles.header}>Welcome to Hot Take</Text>
 
                     <View style={{ height: 10 }} /> 
-                    <Text style={styles.title}>Featured Hot Take</Text>
+                    <Text style={styles.title}>Today's Featured Takes</Text>
                     
-                    {/* Show a featured post */}
-
-                    <View style={{ height: 10 }} /> 
-                    <Text style = {styles.title}>Featured Poll</Text>
-
-                    {/* Show a featured poll */}
-
-                    <View style={{ height: 10 }} /> 
-                    <Text style = {styles.title}>Featured Event</Text>
-
-                    {/* Show a featured event */}
+                    <View>
+                    {samplePosts.map((post) => (
+                        <PostCard
+                        key={post.id}
+                        username={post.username}
+                        created_at={post.created_at}
+                        title={post.title}
+                        content={post.content}
+                        />
+                    ))}
+                    </View>
                 
                     
                 </SafeAreaView>
@@ -89,3 +89,27 @@ const styles = StyleSheet.create({
             textAlign: 'center',
         },
     });
+
+const samplePosts = [
+  {
+    id: "1",
+    username: "armani",
+    created_at: "2h ago",
+    title: "Strozier sucks!!!",
+    content: "Strozier is the worst place to study",
+  },
+  {
+    id: "2",
+    username: "daniel",
+    created_at: "3h ago",
+    title: "Hot Take is a poorly made app",
+    content: "twitter and reddit are way better"
+  },
+  {
+    id: "3",
+    username: "jane_doe",
+    created_at: "3h ago",
+    title: "C++ is the best programming language",
+    content: "idc how good Python is",
+  },
+];
